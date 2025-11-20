@@ -137,7 +137,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SuperMarioCode.cpp" />
+    <ClCompile Include="Animations\Animations.cpp" />
+    <ClCompile Include="Entity\BreakableBrick\BreakableBrick.cpp" />
+    <ClCompile Include="Entity\Coin\Coin.cpp" />
+    <ClCompile Include="Entity\Entity.cpp" />
+    <ClCompile Include="Entity\Goomba\Goomba.cpp" />
+    <ClCompile Include="Entity\Player\Player.cpp" />
+    <ClCompile Include="Entity\UnbreakableBrick\UnbreakableBrick.cpp" />
+    <ClCompile Include="Game\Game.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
