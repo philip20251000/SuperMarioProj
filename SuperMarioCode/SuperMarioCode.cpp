@@ -1,8 +1,3 @@
-/*
-Header:
-Tyson and Philip did this
-*/
-#include <iostream>
 #include <SFML/Graphics.hpp>
 
 int main()

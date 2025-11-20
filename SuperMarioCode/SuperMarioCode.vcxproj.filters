@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SuperMarioBrosGame.cpp">
+    <ClCompile Include="SuperMarioCode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
