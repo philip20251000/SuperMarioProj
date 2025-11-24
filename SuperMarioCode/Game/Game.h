@@ -1,4 +1,4 @@
-//#include"..\Entity\Entity.h"
+#include"..\Entity\Entity.h"
 #include <SFML/Graphics.hpp>
 class Game {
 public:
@@ -7,7 +7,11 @@ public:
 	~Game();
 private:
 	bool wPressed, sPressed, dPressed, aPressed;
-	//std::vector<Entity*> entities;
-
+	std::vector<Entity*> entities;
+	unsigned int tick;
+	sf::Texture* background;
+	sf::View viewport;
+	int bounceStreak = 0;
+	void isColliding();
 
 };

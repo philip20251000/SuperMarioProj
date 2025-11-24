@@ -1,4 +1,21 @@
 #include"Game.h"
+#include"..\Entity\Entity.h"
+#include"..\Entity\Player\Player.h"
+
+
+Game::Game()
+{
+
+}
+
+
+Game::~Game()
+{
+
+
+
+}
+
 
 void Game::run()
 {
@@ -20,12 +37,8 @@ void Game::run()
     }
 }
 
-Game::Game()
-{
 
-}
-
-Game::~Game()
+void isColliding()
 {
 
 }
