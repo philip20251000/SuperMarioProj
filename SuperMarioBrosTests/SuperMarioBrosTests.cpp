@@ -14,8 +14,8 @@ namespace SuperMarioBrosTests
 		
 		TEST_METHOD(CoinValue)
 		{
-			Coin* test = new Coin();
-			Assert::AreEqual(100, test->getValue());
+			Coin test;
+			Assert::AreEqual(100, test.getValue());
 		}
 		TEST_METHOD(CoinUpdate)
 		{
