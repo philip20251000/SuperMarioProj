@@ -1,14 +1,10 @@
 #include "pch.h"
 #include "CppUnitTest.h"
 #include"..\SuperMarioCode\Entity\Coin\Coin.h"
-<<<<<<< HEAD
 #include"..\SuperMarioCode\Entity\Goomba\Goomba.h"
 #include"..\SuperMarioCode\Entity\Player\Player.h"
 #include<vector>
-=======
 #include"..\SuperMarioCode\Game\Game.h"
-
->>>>>>> 56b1cb3923da71c5862df2fea2a8fc6a8e6d9bdc
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -43,7 +39,6 @@ namespace SuperMarioBrosTests
 		TEST_METHOD(CoinDeathDecon)
 		{
 			Coin* test = new Coin();
-<<<<<<< HEAD
 			test->death();
 		}
 		TEST_METHOD(EntityVector)
@@ -63,13 +58,24 @@ namespace SuperMarioBrosTests
 		TEST_METHOD(PlayerGroundCollision)
 		{
 			//if(!)
-=======
-			Assert::IsNotNull(test);
-			int x = test->getEntities().size();
-			test->death();
-			int y = test->getEntities().size();
-			Assert::AreEqual(x - y, 1);
->>>>>>> 56b1cb3923da71c5862df2fea2a8fc6a8e6d9bdc
+		}
+		TEST_METHOD(EntityVector)
+		{
+			sf::View* viewport = new sf::View();
+			Coin* test = new Coin();
+			Goomba* test2 = new Goomba(100, false);
+			Player* test3 = new Player(viewport);
+			std::vector<Entity*> entities = test->getEntities();
+			test2->death();
+			test3->death();
+			Assert::AreEqual(1, (int)entities.size());
+			Assert::IsNotNull(dynamic_cast<Coin*> (entities.at(0)));
+			delete viewport;
+			delete test;
+		}
+		TEST_METHOD(PlayerGroundCollision)
+		{
+			//if(!)
 		}
 	};
 }
