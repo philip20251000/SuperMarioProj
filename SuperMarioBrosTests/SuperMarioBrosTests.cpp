@@ -13,7 +13,7 @@ namespace SuperMarioBrosTests
 	TEST_CLASS(SuperMarioBrosTests)
 	{
 	public:
-		
+
 		TEST_METHOD(CoinValue)
 		{
 			Coin test;
@@ -33,31 +33,17 @@ namespace SuperMarioBrosTests
 			int x = game->getPoints();
 			Coin test;
 			test.death();
-			int y = game->getPoints()-x;
+			int y = game->getPoints() - x;
 			Assert::AreEqual(100, y);
 		}
 		TEST_METHOD(CoinDeathDecon)
 		{
 			Coin* test = new Coin();
+			Assert::IsNotNull(test);
+			int x = test->getEntities().size();
 			test->death();
-		}
-		TEST_METHOD(EntityVector)
-		{
-			sf::View* viewport = new sf::View();
-			Coin* test = new Coin();
-			Goomba* test2 = new Goomba(100,false);
-			Player* test3 = new Player(viewport);
-			std::vector<Entity*> entities = test->getEntities();
-			test2->death();
-			test3->death();
-			Assert::AreEqual(1, (int)entities.size());
-			Assert::IsNotNull(dynamic_cast<Coin*> (entities.at(0)));
-			delete viewport;
-			delete test;
-		}
-		TEST_METHOD(PlayerGroundCollision)
-		{
-			//if(!)
+			int y = test->getEntities().size();
+			Assert::AreEqual(x - y, 1);
 		}
 		TEST_METHOD(EntityVector)
 		{
@@ -75,7 +61,9 @@ namespace SuperMarioBrosTests
 		}
 		TEST_METHOD(PlayerGroundCollision)
 		{
-			//if(!)
+			sf::View* viewport = new sf::View();
+			Player* test = new Player(viewport);
+			//test->setFrame();
 		}
 	};
 }

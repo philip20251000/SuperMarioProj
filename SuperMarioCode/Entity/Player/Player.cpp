@@ -29,3 +29,14 @@ void Player::death()
 {
 
 }
+
+void Player::grow()
+{
+
+}
+
+
+void Player::shrink()
+{
+
+}
