@@ -8,9 +8,28 @@ public:
 	void collide(Entity*) override;
 	void death() override;
 	void setSuper(bool super) { superSize = super; }
+	bool changingBackground = false;
+	//void setFrame(Player::FrameType x) { curMove = x; }
 	Player(sf::View*);
 	~Player();
 private:
+	enum FrameType
+	{
+		STAND_LEFT,
+		STAND_RIGHT,
+		WALK_LEFT,
+		WALK_RIGHT,
+		JUMP_LEFT,
+		JUMP_RIGHT,
+		JUMP,
+		CROUCH_IN_TUBE,
+		CROUCH,
+	};
+	FrameType curMove = STAND_RIGHT;
+	std::unordered_map<FrameType, Animations*> frames;
 	sf::View* viewport = nullptr;
 	bool superSize = false;
+	double scale;
+	void grow();
+	void shrink();
 };

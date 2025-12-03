@@ -17,4 +17,8 @@ private:
 	bool mystery;
 	bool hasCoin;
 	bool hasMushroom;
+	enum FrameType
+	{
+	};
+	std::unordered_map<FrameType, Animations*> frames;
 };

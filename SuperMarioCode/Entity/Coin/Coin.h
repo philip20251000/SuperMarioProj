@@ -12,4 +12,8 @@ public:
 private:
 	int pointValue;
 	bool spawned;
+	enum FrameType
+	{
+	};
+	std::unordered_map<FrameType, Animations*> frames;
 };

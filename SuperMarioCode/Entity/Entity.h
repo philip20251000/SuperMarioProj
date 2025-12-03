@@ -28,9 +28,5 @@ protected:
 	std::vector<sf::Vector2f> grounds2;
 	std::vector<sf::Vector2f> walls;
 	bool shouldUpdate;
-	enum FrameType
-	{
-	};
-	std::unordered_map<FrameType, Animations*> frames;
 	unsigned int tick = 0;
 };

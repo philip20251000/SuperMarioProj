@@ -14,4 +14,8 @@ public:
 private:
 	int pointValue;
 	bool isMushroom;
+	enum FrameType
+	{
+	};
+	std::unordered_map<FrameType, Animations*> frames;
 };
