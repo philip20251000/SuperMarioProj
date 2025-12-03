@@ -5,6 +5,7 @@ public:
 	void run();
 	Game();
 	~Game();
+	int getPoints() { return points; };
 private:
 	bool wPressed, sPressed, dPressed, aPressed;
 	std::vector<Entity*> entities;
@@ -13,5 +14,5 @@ private:
 	sf::View viewport;
 	int bounceStreak = 0;
 	void isColliding();
-
+	int points=0;
 };

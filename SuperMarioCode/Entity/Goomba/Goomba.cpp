@@ -32,7 +32,7 @@ void Goomba::death()
 
 int Goomba::getValue()
 {
-	return pointValue;
+	return -1;
 }
 
 bool Goomba::getIsMushroom()

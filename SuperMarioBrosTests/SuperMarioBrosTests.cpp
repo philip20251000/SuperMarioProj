@@ -1,9 +1,14 @@
 #include "pch.h"
 #include "CppUnitTest.h"
 #include"..\SuperMarioCode\Entity\Coin\Coin.h"
+<<<<<<< HEAD
 #include"..\SuperMarioCode\Entity\Goomba\Goomba.h"
 #include"..\SuperMarioCode\Entity\Player\Player.h"
 #include<vector>
+=======
+#include"..\SuperMarioCode\Game\Game.h"
+
+>>>>>>> 56b1cb3923da71c5862df2fea2a8fc6a8e6d9bdc
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -15,8 +20,8 @@ namespace SuperMarioBrosTests
 		
 		TEST_METHOD(CoinValue)
 		{
-			Coin* test = new Coin();
-			Assert::AreEqual(100, test->getValue());
+			Coin test;
+			Assert::AreEqual(100, test.getValue());
 		}
 		TEST_METHOD(CoinUpdate)
 		{
@@ -28,11 +33,17 @@ namespace SuperMarioBrosTests
 		}
 		TEST_METHOD(CoinDeathPoints)
 		{
-
+			Game* game = new Game();
+			int x = game->getPoints();
+			Coin test;
+			test.death();
+			int y = game->getPoints()-x;
+			Assert::AreEqual(100, y);
 		}
 		TEST_METHOD(CoinDeathDecon)
 		{
 			Coin* test = new Coin();
+<<<<<<< HEAD
 			test->death();
 		}
 		TEST_METHOD(EntityVector)
@@ -52,6 +63,13 @@ namespace SuperMarioBrosTests
 		TEST_METHOD(PlayerGroundCollision)
 		{
 			//if(!)
+=======
+			Assert::IsNotNull(test);
+			int x = test->getEntities().size();
+			test->death();
+			int y = test->getEntities().size();
+			Assert::AreEqual(x - y, 1);
+>>>>>>> 56b1cb3923da71c5862df2fea2a8fc6a8e6d9bdc
 		}
 	};
 }
