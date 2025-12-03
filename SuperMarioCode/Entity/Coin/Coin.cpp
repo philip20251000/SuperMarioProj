@@ -14,7 +14,7 @@ Coin::~Coin()
 
 int Coin::getValue()
 {
-	return 100;
+	return -1;
 }
 
 
@@ -24,7 +24,7 @@ void Coin::update()
 }
 
 
-void Coin::collide(Entity*)
+void Coin::collide(Entity* object)
 {
 
 }
