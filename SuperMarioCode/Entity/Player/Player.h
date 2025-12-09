@@ -9,10 +9,6 @@ public:
 	void death() override;
 	void setSuper(bool super) { superSize = super; }
 	bool changingBackground = false;
-	//void setFrame(Player::FrameType x) { curMove = x; }
-	Player(sf::View*);
-	~Player();
-private:
 	enum FrameType
 	{
 		STAND_LEFT,
@@ -25,6 +21,11 @@ private:
 		CROUCH_IN_TUBE,
 		CROUCH,
 	};
+	void setFrame(FrameType x) { curMove = x; }
+	FrameType getFrame() { return curMove; }
+	Player(sf::View*);
+	~Player();
+private:
 	FrameType curMove = STAND_RIGHT;
 	std::unordered_map<FrameType, Animations*> frames;
 	sf::View* viewport = nullptr;
