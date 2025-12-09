@@ -13,6 +13,8 @@ public:
 	void update() override;
 	void collide(Entity*) override;
 	void death() override;
+	bool getMystery() { return mystery; };
+	bool getCoin() { return hasCoin; };
 private:
 	bool mystery;
 	bool hasCoin;

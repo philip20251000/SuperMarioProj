@@ -3,6 +3,7 @@
 #include"..\SuperMarioCode\Entity\Coin\Coin.h"
 #include"..\SuperMarioCode\Entity\Goomba\Goomba.h"
 #include"..\SuperMarioCode\Entity\Player\Player.h"
+#include"..\SuperMarioCode\Entity\BreakableBrick\BreakableBrick.h"
 #include<vector>
 #include"..\SuperMarioCode\Game\Game.h"
 
@@ -64,6 +65,41 @@ namespace SuperMarioBrosTests
 			sf::View* viewport = new sf::View();
 			Player* test = new Player(viewport);
 			//test->setFrame();
+		}
+		TEST_METHOD(BBSpawned)
+		{
+			BreakableBrick brick(true, true);
+			Assert::AreEqual(true, brick.getMystery());
+			Assert::AreEqual(true, brick.getCoin());
+		}
+		TEST_METHOD(BBCoin)
+		{
+			BreakableBrick brick(false, true);
+			Coin coin = brick.spawnCoin();
+			Assert::AreEqual(100, coin.getValue());
+		}
+		TEST_METHOD(BBMushroom)
+		{
+			BreakableBrick brick(true, false);
+			Goomba mushroom = brick.spawnMushroom();
+			Assert::AreEqual(mushroom.getIsMushroom(), true);
+			Assert::AreNotEqual(mushroom.getVelo().x, 0.f);
+		}
+		TEST_METHOD(BBupdate)
+		{
+
+		}
+		TEST_METHOD(BBcollide)
+		{
+
+		}
+		TEST_METHOD(BBdeath)
+		{
+			BreakableBrick brick(true, true);
+			int y = brick.getEntities().size();
+			brick.death();
+			int x = brick.getEntities().size();
+			Assert::AreEqual(y - x, 1);
 		}
 	};
 }
