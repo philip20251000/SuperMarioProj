@@ -105,7 +105,7 @@ namespace SuperMarioBrosTests
 			BreakableBrick brick(true, false);
 			Goomba mushroom = brick.spawnMushroom();
 			Assert::AreEqual(mushroom.getIsMushroom(), true);
-			Assert::AreNotEqual(mushroom.getVelo().x, 0.f);
+			Assert::AreNotEqual(mushroom.getVelo().size.x, 0.f);
 		}
 		TEST_METHOD(BBupdate)
 		{
