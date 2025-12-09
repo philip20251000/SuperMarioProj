@@ -12,21 +12,23 @@ public:
 	std::vector<Entity*> getEntities();
 	Entity();
 	~Entity();
-	void setVelo(sf::Vector2f);
-	sf::Vector2f getVelo();
-	sf::Vector2f getPos();
-	void setPos(sf::Vector2f);
+	void setVelo(sf::FloatRect);
+	sf::FloatRect getVelo();
+	sf::FloatRect getPos();
+	void setPos(sf::FloatRect);
 	const sf::Sprite* getSprite();
+	std::vector<sf::FloatRect> getGrounds() { return grounds; }
+	unsigned int getTick() { return tick; }
 
 protected:
 	sf::Texture* texture = nullptr;
 	std::vector<Entity*> entities;
-	sf::Vector2f pos;
-	sf::Vector2f velo;
-	const sf::Sprite* sprite;
-	std::vector<sf::Vector2f> grounds;
-	std::vector<sf::Vector2f> grounds2;
-	std::vector<sf::Vector2f> walls;
+	sf::FloatRect pos;
+	sf::FloatRect velo;
+	const sf::Sprite* sprite = nullptr;
+	std::vector<sf::FloatRect> grounds;
+	std::vector<sf::FloatRect> grounds2;
+	std::vector<sf::FloatRect> walls;
 	bool shouldUpdate;
 	unsigned int tick = 0;
 };

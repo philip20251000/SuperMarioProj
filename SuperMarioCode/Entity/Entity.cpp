@@ -18,25 +18,25 @@ std::vector<Entity*> Entity::getEntities()
 }
 
 
-void Entity::setVelo(sf::Vector2f newVelo)
+void Entity::setVelo(sf::FloatRect newVelo)
 {
 	velo = newVelo;
 }
 
 
-sf::Vector2f Entity::getVelo()
+sf::FloatRect Entity::getVelo()
 {
 	return velo;
 }
 
 
-void Entity::setPos(sf::Vector2f newPos)
+void Entity::setPos(sf::FloatRect newPos)
 {
 	pos = newPos;
 }
 
 
-sf::Vector2f Entity::getPos()
+sf::FloatRect Entity::getPos()
 {
 	return pos;
 }

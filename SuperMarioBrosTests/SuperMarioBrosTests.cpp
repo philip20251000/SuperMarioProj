@@ -63,7 +63,29 @@ namespace SuperMarioBrosTests
 		{
 			sf::View* viewport = new sf::View();
 			Player* test = new Player(viewport);
-			//test->setFrame();
+			test->setFrame(Player::FrameType::CROUCH);
+			test->update();
+			test->setFrame(Player::FrameType::STAND_LEFT);
+			test->update();
+			test->setFrame(Player::FrameType::STAND_RIGHT);
+			test->update();
+			test->setFrame(Player::FrameType::WALK_LEFT);
+			test->update();
+			test->setFrame(Player::FrameType::WALK_RIGHT);
+			Assert::IsNotNull(test->getSprite());
+			for (int i = 0; i < test->getGrounds().size(); i++)
+				Assert::IsTrue(test->getSprite()->getGlobalBounds().findIntersection(test->getGrounds().at(i)) == std::nullopt);
+		}
+		TEST_METHOD(TickUpdate)
+		{
+			sf::View* viewport = new sf::View();
+			Player* test = new Player(viewport);
+			test->setFrame(Player::FrameType::CROUCH);
+			test->update();
+			Assert::AreEqual(test->getTick(), (unsigned int)1);
+			test->setFrame(Player::FrameType::STAND_LEFT);
+			test->update();
+			Assert::AreEqual(test->getTick(), (unsigned int)2);
 		}
 	};
 }
