@@ -9,14 +9,14 @@ public:
 	virtual void update() = 0;
 	virtual void collide(Entity*) = 0;
 	virtual void death() = 0;
-	std::vector<Entity*> getEntities();
+	std::vector<Entity*> getEntities() { return entities; }
 	Entity();
 	~Entity();
 	void setVelo(sf::FloatRect);
-	sf::FloatRect getVelo();
-	sf::FloatRect getPos();
+	sf::FloatRect getVelo() { return velo; }
+	sf::FloatRect getPos() { return pos; }
 	void setPos(sf::FloatRect);
-	const sf::Sprite* getSprite();
+	const sf::Sprite* getSprite() { return sprite; }
 	std::vector<sf::FloatRect> getGrounds() { return grounds; }
 	unsigned int getTick() { return tick; }
 
