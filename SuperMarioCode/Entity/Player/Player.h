@@ -20,6 +20,7 @@ public:
 		JUMP,
 		CROUCH_IN_TUBE,
 		CROUCH,
+		DYING
 	};
 	void setFrame(FrameType x) { curMove = x; }
 	FrameType getFrame() { return curMove; }
