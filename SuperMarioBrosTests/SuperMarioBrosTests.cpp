@@ -4,6 +4,7 @@
 #include"..\SuperMarioCode\Entity\Goomba\Goomba.h"
 #include"..\SuperMarioCode\Entity\Player\Player.h"
 #include"..\SuperMarioCode\Entity\BreakableBrick\BreakableBrick.h"
+#include"..\SuperMarioCode\Entity\Entity.h"
 #include<vector>
 #include"..\SuperMarioCode\Game\Game.h"
 
@@ -36,6 +37,7 @@ namespace SuperMarioBrosTests
 			test.death();
 			int y = game->getPoints() - x;
 			Assert::AreEqual(100, y);
+			delete game;
 		}
 		TEST_METHOD(CoinDeathDecon)
 		{
