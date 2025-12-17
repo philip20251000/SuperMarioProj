@@ -16,7 +16,7 @@ public:
 	sf::FloatRect getVelo() { return velo; }
 	sf::FloatRect getPos() { return pos; }
 	void setPos(sf::FloatRect);
-	const sf::Sprite* getSprite() { return sprite; }
+	sf::Sprite* getSprite() { return sprite; }
 	std::vector<sf::FloatRect> getGrounds() { return grounds; }
 	unsigned int getTick() { return tick; }
 
@@ -25,7 +25,7 @@ protected:
 	std::vector<Entity*> entities;
 	sf::FloatRect pos;
 	sf::FloatRect velo;
-	const sf::Sprite* sprite = nullptr;
+	sf::Sprite* sprite = nullptr;
 	std::vector<sf::FloatRect> grounds;
 	std::vector<sf::FloatRect> grounds2;
 	std::vector<sf::FloatRect> walls;

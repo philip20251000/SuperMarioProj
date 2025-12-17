@@ -1,6 +1,6 @@
 #include"Animations.h"
 
-Animations::Animations(sf::IntRect* zone, bool rightToLeft, int frameCount)
+Animations::Animations(sf::IntRect* zone, bool rightToLeft, int frameVertical, int frameHorizontal)
 {
 
 }

@@ -36,7 +36,7 @@ void Game::run()
 }
 
 
-void isColliding()
+void Game::isColliding()
 {
 
 }

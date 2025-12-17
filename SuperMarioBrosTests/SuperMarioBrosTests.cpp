@@ -7,6 +7,7 @@
 #include"..\SuperMarioCode\Entity\Entity.h"
 #include<vector>
 #include"..\SuperMarioCode\Game\Game.h"
+#include"..\SuperMarioCode\Animations\Animations.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -145,5 +146,44 @@ public:
 		delete game;
 		delete viewport;
 		delete test;
+		delete test2;
+	}
+	TEST_METHOD(IsColliding)
+	{
+		Game* game = new Game();
+		sf::View* viewport = new sf::View();
+		Player* test = new Player(viewport);
+		Goomba* test2 = new Goomba(100, false);
+		int currentStreak = game->bounceStreak;
+		(test->getSprite())->setPosition(sf::Vector2f(100.f, 100.f));
+		(test2->getSprite())->setPosition(sf::Vector2f(100.f, 100.f));
+		game->isColliding();
+		int newStreak = game->bounceStreak;
+		if (currentStreak == newStreak)
+			Assert::AreEqual((int)test->getFrame(), (int)Player::FrameType::DYING);
+		else if (currentStreak + 1 == newStreak)
+			Assert::AreNotEqual((int)test->getFrame(), (int)Player::FrameType::DYING);
+		else
+			Assert::AreEqual(currentStreak + 1, newStreak);
+		delete game;
+		delete viewport;
+		delete test;
+		delete test2;
+	}
+	TEST_METHOD(AnimationTest)
+	{
+		sf::IntRect* testRect = new sf::IntRect();
+		testRect->position = sf::Vector2i(0, 0);
+		testRect->size = sf::Vector2i(100, 100);
+		Animations* test = new Animations(testRect, false, 2, 2);
+		Assert::AreEqual(0, test->getFrame(0).position.x);
+		Assert::AreEqual(50, test->getFrame(2).position.x);
+		Assert::AreEqual(50, test->getFrame(1).size.x);
+		Assert::AreEqual(50, test->getFrame(3).size.x);
+		Assert::AreEqual(0, test->nextFrame().position.x);
+		Assert::AreEqual(50, test->nextFrame().position.x);
+		delete testRect;
+		delete test;
+
 	}
 };
