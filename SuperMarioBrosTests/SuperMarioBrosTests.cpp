@@ -176,6 +176,7 @@ public:
 		testRect->position = sf::Vector2i(0, 0);
 		testRect->size = sf::Vector2i(100, 100);
 		Animations* test = new Animations(testRect, false, 2, 2);
+		//testing placement and size of boxes surronding sprites
 		Assert::AreEqual(0, test->getFrame(0).position.x);
 		Assert::AreEqual(50, test->getFrame(2).position.x);
 		Assert::AreEqual(50, test->getFrame(1).size.x);
