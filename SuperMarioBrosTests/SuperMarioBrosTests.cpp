@@ -20,14 +20,6 @@ public:
 		Coin test;
 		Assert::AreEqual(100, test.getValue());
 	}
-	TEST_METHOD(CoinUpdate)
-	{
-
-	}
-	TEST_METHOD(CoinCollide)
-	{
-
-	}
 	TEST_METHOD(CoinDeathPoints)
 	{
 		Game* game = new Game();
@@ -112,14 +104,6 @@ public:
 		Goomba mushroom = brick.spawnMushroom();
 		Assert::AreEqual(mushroom.getIsMushroom(), true);
 		Assert::AreNotEqual(mushroom.getVelo().size.x, 0.f);
-	}
-	TEST_METHOD(BBupdate)
-	{
-
-	}
-	TEST_METHOD(BBcollide)
-	{
-
 	}
 	TEST_METHOD(BBdeath)
 	{
